@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IC-Cloud</title>
+  <style>
+    body {
+      background-color: #E6E6FA; /* Lilás claro */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background-color: #87CEEB; /* Azul claro */
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: white;
+      text-align: center;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      resize: vertical;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: white;
+      border: none;
+      border-radius: 5px;
+      color: #87CEEB; /* Azul claro */
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #87CEEB; /* Azul claro */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>IC-Cloud</h1>
+    <form action="/data" method="POST">
+      <p>Url <input type = "text" name = "url" /></p>
+      <p>Mensagem <input type = "text" name = "mensagem" /></p>
+      <p><input type = "submit" value = "Submit" /></p>
+    </form>
+  </div>
+</body>
+</html>
