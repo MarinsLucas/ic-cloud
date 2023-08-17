@@ -18,7 +18,7 @@ def make_request(secret_message, url):
     except requests.exceptions.RequestException as e:
         print("Erro na conexão:", e)
 
-@app.route('/')
+@app.route('/form')
 def form():
     return render_template('form.html')
  
