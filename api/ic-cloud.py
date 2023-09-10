@@ -1,5 +1,8 @@
 from flask import Flask,render_template,request
 import requests
+import os
+import pyvista
+from io import StringIO
  
 app = Flask(__name__)
 
@@ -29,7 +32,14 @@ def data():
     if request.method == 'POST':
         form_data = request.form
         print(form_data.getlist('mensagem'))
-        return make_request(form_data['mensagem'], str(form_data['url']))
+        filetext = make_request(form_data['mensagem'], str(form_data['url']))
+        f = open("temp.vtu", "w")
+        f.write(filetext)
+        reader = pyvista.read("temp.vtu")
+        reader.plot(off_screen=True, window_size=(500,500), screenshot=filepath)
+        static_image_path = os.path.join('static', 'images')
+        filename = 'cabo.png'
+        filepath = os.path.join(static_image_path, filename)
+        return os.path.join('imagens', filename)
  
- 
-#app.run(host='localhost', port=5000, debug=True)
+app.run(host='localhost', port=5000, debug=True)
