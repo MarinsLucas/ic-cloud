@@ -1,21 +1,10 @@
+<!DOCTYPE html>
 <html>
-  <script>
-    $(document).ready(function() {
-       $('#retrieve').click(function(){
-           $.ajax({
-           url: "{{ url_for ('data') }}",
-           type: "GET",
-           data: { 
-               meshtype:  $('#meshtype option:selected').val()
-           },
-           success: function(response) {
-               $("#myimg").attr('src', '/static/' + response);
-          },
-          error: function(xhr) {
-              alert("Please select a mesh type from the drop down menu.");
-         }
-         });
-       });
-    });
-  </script>
+<head>
+    <title>Imagem Gerada</title>
+</head>
+<body>
+    <h1>Imagem Gerada:</h1>
+    <img src= "{{ url_for('static', filename='images/cabo.jpeg') }}" alt="Imagem Gerada" class="image">
+</body>
 </html>
