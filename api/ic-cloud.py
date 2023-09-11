@@ -52,4 +52,4 @@ def data():
     if request.method == 'POST':
         return render_template("data.html") """
  
-app.run(host='localhost', port=5000, debug=True)
+#app.run(host='localhost', port=5000, debug=True)
