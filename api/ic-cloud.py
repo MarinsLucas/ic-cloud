@@ -21,7 +21,7 @@ def createIniInformation(data):
     ini= ini + "[update_monodomain]\nmain_function=update_monodomain_default\n\n[save_result]"
     ini= ini + "print=" + str(data["print_rate"]) + '\n'
     ini= ini + "output_dir=./outputs/temp\n"
-    ini= ini + "main_function=save_as_vtu\ninit_function=ini_save_as_vtk_or_vtu\nend_function=end_save_as_vtk_or_vtu\nsave_pvd=true\nextra_function_1=save_vm_matrix\nfile_prefix=V\ncompress=false\nbinary=true\n"
+    ini= ini + "main_function=save_as_vtu\ninit_function=init_save_as_vtk_or_vtu\nend_function=end_save_as_vtk_or_vtu\nsave_pvd=true\nextra_function_1=save_vm_matrix\nfile_prefix=V\ncompress=false\nbinary=true\n"
     ini = ini + "\n[assembly_matrix]\n"
     ini = ini + "sigma_x=" + str(data["sigma_x"]) + '\n'
     ini = ini + "sigma_y=" + str(data["sigma_y"]) + '\n'
