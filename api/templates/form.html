@@ -55,12 +55,23 @@
     <h1>MonoAlgWeb</h1>
     <form action="/data" method="POST">
       <p>Url <input type = "text" name = "url" /></p>
-      <p>Num Threads <input type = "text" name = "num_threads" /></p>
+      <h4>Main</h4>
+      <p>num Threads <input type = "text" name = "num_threads" /></p>
       <p>dt_pde <input type = "text" name = "dt_pde" /></p>
       <p>Simulation time <input type = "text" name = "simulation_time" /></p>
-      <p>abort_on_no_activity <input type = "text" name = "abort_on_no_activity" /></p>
-      <p>use_adaptivity <input type = "text" name = "use_adaptivity" /></p>
-      <p>main_function <input type = "text" name = "main_function" /></p>
+      <h4>Save protocol</h4>
+      <p>print_rate <input type = "text" name = "print_rate" /></p>
+      <h4>Assembly Matrix</h4>
+      <p>sigma_x <input type = "text" name = "sigma_x" /></p>
+      <p>sigma_y <input type = "text" name = "sigma_y" /></p>
+      <p>sigma_z <input type = "text" name = "sigma_z" /></p>
+      <h4>Domain</h4>
+      <p>name <input type = "text" name = "domain_name" /></p>
+      <p>start_dx<input type = "text" name = "start_dx" /></p>
+      <p>start_dy<input type = "text" name = "start_dy" /></p>
+      <p>start_dz<input type = "text" name = "start_dz" /></p>
+      <p>cable_length<input type = "text" name = "cable_length" /></p>
+      <p>main_function<input type = "text" name = "main_function_domain" /></p>
       <p><input type = "submit" value = "Submit" /></p>
     </form>
   </div>
