@@ -19,7 +19,7 @@ def createIniInformation(data):
     ini = ini + "abort_on_no_activity=false\nuse_adaptivity=false\n\n"
 
     ini= ini + "[update_monodomain]\nmain_function=update_monodomain_default\n\n[save_result]"
-    ini= ini + "print=" + str(data["print_rate"]) + '\n'
+    ini= ini + "\nprint_rate=" + str(data["print_rate"]) + '\n'
     ini= ini + "output_dir=./outputs/temp\n"
     ini= ini + "main_function=save_as_vtu\ninit_function=init_save_as_vtk_or_vtu\nend_function=end_save_as_vtk_or_vtu\nsave_pvd=true\nextra_function_1=save_vm_matrix\nfile_prefix=V\ncompress=false\nbinary=true\n"
     ini = ini + "\n[assembly_matrix]\n"
@@ -49,7 +49,7 @@ def make_request(data):
         PARAMS = {'ini': data}
         response = requests.get(url, params=PARAMS, stream=True)
         if response.status_code == 200:
-            with open("temp.vtu", 'wb') as out_file:
+            with open("temp.zip", 'wb') as out_file:
                 shutil.copyfileobj(response.raw, out_file)
             return 
         
@@ -66,12 +66,14 @@ def form():
 def data():
     form_data = request.form
     make_request(form_data)
-    reader = pyvista.read("temp.vtu")
-    filename = 'cabo.png'
-    filepath = os.path.join(static_image_path, filename)
-    reader.plot(off_screen=False, window_size=(500,500), screenshot=filepath)
-    print('/' + filepath.replace("\\", "/"))
-    return render_template('data.html', image_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)) #os.path.join('imagens', filename)
+    #mesh = pyvista.read("temp.vtu")
+    """ filename = 'cabo.png'
+    filepath = os.path.join(static_image_path, filename) """
+    #reader.plot(off_screen=False, window_size=(500,500), screenshot=filepath)
+
+
+
+    return render_template('data.html') 
 
  
 app.run(host='localhost', port=5000, debug=True)
