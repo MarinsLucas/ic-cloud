@@ -41,7 +41,7 @@ def data():
     reader = pyvista.read("temp.vtu")
     filename = 'cabo.png'
     filepath = os.path.join(static_image_path, filename)
-    reader.plot(off_screen=True, window_size=(500,500), screenshot=filepath)
+    reader.plot(off_screen=False, window_size=(500,500), screenshot=filepath)
     print('/' + filepath.replace("\\", "/"))
     return render_template('data.html', image_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)) #os.path.join('imagens', filename)
 

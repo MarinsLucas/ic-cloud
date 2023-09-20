@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IC-Cloud</title>
+  <title>MonoAlgWeb</title>
   <style>
     body {
       background-color: #E6E6FA; /* Lilás claro */
@@ -11,15 +11,15 @@
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: right;
+      align-items: right;
       min-height: 100vh;
     }
     .container {
       background-color: #87CEEB; /* Azul claro */
       border-radius: 10px;
       padding: 20px;
-      width: 300px;
+      width: 500px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     h1 {
@@ -52,10 +52,15 @@
 </head>
 <body>
   <div class="container">
-    <h1>IC-Cloud</h1>
+    <h1>MonoAlgWeb</h1>
     <form action="/data" method="POST">
       <p>Url <input type = "text" name = "url" /></p>
-      <p>Mensagem <input type = "text" name = "mensagem" /></p>
+      <p>Num Threads <input type = "text" name = "num_threads" /></p>
+      <p>dt_pde <input type = "text" name = "dt_pde" /></p>
+      <p>Simulation time <input type = "text" name = "simulation_time" /></p>
+      <p>abort_on_no_activity <input type = "text" name = "abort_on_no_activity" /></p>
+      <p>use_adaptivity <input type = "text" name = "use_adaptivity" /></p>
+      <p>main_function <input type = "text" name = "main_function" /></p>
       <p><input type = "submit" value = "Submit" /></p>
     </form>
   </div>
