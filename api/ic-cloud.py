@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, send_file, send_from_directory
 import requests
 import os
 from io import StringIO
@@ -48,8 +48,8 @@ def make_request(data):
         PARAMS = {'ini': data}
         response = requests.get(url, params=PARAMS, stream=True)
         if response.status_code == 200:
-            """ with open("temp.zip", 'wb') as out_file:
-                shutil.copyfileobj(response.raw, out_file) """
+            with open("temp.zip", 'wb') as out_file:
+                shutil.copyfileobj(response.raw, out_file) 
             return 
         
         else:
@@ -60,6 +60,12 @@ def make_request(data):
 @app.route('/')
 def form():
     return render_template('form.html')
+
+@app.route('/download_files')
+def download_response():
+    return send_file('../temp.zip',
+            mimetype = 'zip',
+            as_attachment = True)
 
 @app.route('/data/', methods = ['POST', 'GET'])
 def data():
