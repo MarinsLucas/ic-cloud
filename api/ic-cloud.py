@@ -1,7 +1,6 @@
 from flask import Flask,render_template,request
 import requests
 import os
-import pyvista
 from io import StringIO
 import shutil
 
@@ -76,4 +75,4 @@ def data():
     return render_template('data.html') 
 
  
-app.run(host='localhost', port=5000, debug=True)
+#app.run(host='localhost', port=5000, debug=True)
