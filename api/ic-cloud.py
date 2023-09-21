@@ -48,7 +48,7 @@ def make_request(data):
         PARAMS = {'ini': data}
         response = requests.get(url, params=PARAMS, stream=True)
         if response.status_code == 200:
-            with open("temp.zip", 'wb') as out_file:
+            with open("./tmp/temp.zip", 'wb') as out_file:
                 shutil.copyfileobj(response.raw, out_file) 
             return 
         
@@ -63,7 +63,7 @@ def form():
 
 @app.route('/download_files')
 def download_response():
-    return send_file('../temp.zip',
+    return send_file('../tmp/temp.zip',
             mimetype = 'zip',
             as_attachment = True)
 
